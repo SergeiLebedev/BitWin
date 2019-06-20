@@ -1,0 +1,31 @@
+<div class="main-content">
+    <div class="test-buttons">
+        <button *ngFor="let test of tests" class="test-button" (click)="startTest(test)">Test №{{1+test.id}}</button>
+    </div>
+    <div *ngIf="currentTest">
+        <div class="question">
+            <span>{{currentTest.questions[currentQuestion].question}}</span>
+            <span *ngIf="currentTest.questions[currentQuestion].picture">
+                <img src="{{picturesPath}}{{currentTest.questions[currentQuestion].picture}}">
+            </span>
+        </div>
+        <button class="next-button" (click)="nextQuestion()">Next question</button>
+        <div class="answers">
+            <div class="answer" *ngFor="let answer of currentTest.questions[currentQuestion].variants; let i = index"
+                (click)="checkAnswer(i)">
+                {{answer}}
+                <span *ngIf="currentAnswer">
+                    <img src="/assets/tick.svg"
+                        *ngIf="currentAnswer === currentTest.questions[currentQuestion].answer && currentAnswer === i.toString() || currentTest.questions[currentQuestion].answer === i.toString()">
+                    <img src="/assets/cross.svg"
+                        *ngIf="currentAnswer !== currentTest.questions[currentQuestion].answer && currentAnswer === i.toString()">
+                </span>
+            </div>
+        </div>
+        <div>
+            <span class="current-question">Question №: {{currentQuestion}}/{{currentTest.questions.length}}</span>
+            <span class="right-answers">Right answers: {{rightAnswers}}</span>
+            <span class="wrong-answers">Wrong answers: {{wrongAnswers}}</span>
+        </div>
+    </div>
+</div>

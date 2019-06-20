@@ -1,0 +1,40 @@
+.chart-list {
+    padding: 5px;
+    overflow-y: auto;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.chart-item {
+    position: relative;
+    max-width: 400px;
+    max-height: 200px;
+    height: 200px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.button-position {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.good-looking-button {
+    background: bisque;
+    border: none;
+    border-radius: 3px;
+    /* margin: 5px;
+    height: auto; */
+}
+
+.button-height {
+    height: 2rem;
+}
+
+.label {
+    font-size: 2rem;
+    color: white;
+    margin: 1rem;
+}

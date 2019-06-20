@@ -1,0 +1,71 @@
+.main-content {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    background-color: rgb(56, 11, 38);
+    /* overflow: hidden; */
+    /* width: 100%;
+    height: 100%; */
+}
+
+.logo {
+    /* width: 20rem;
+    margin: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0; */
+    max-width: 20rem;
+    max-height: 7rem;
+    margin: 2rem;
+    z-index: 2;
+    mix-blend-mode: color-dodge;
+}
+
+.info {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 2;
+}
+
+.contact-title {
+    color: grey;
+}
+
+.name {
+    /* color: #e4cbde; */
+    color: white;
+    font-size: 7rem;
+}
+
+.ocupation {
+    /* color: #f38a45; */
+    color: #FF004C;
+    font-size: 3rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.detail-value {
+    color: white;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+i {
+    /* color: #f38a45; */
+    color: #FF004C;
+    font-size: 2rem;
+    min-width: 3rem;
+}
+
+canvas {
+    /* background: radial-gradient(ellipse at center, hsl(210, 68%, 10%) 0%, #000 100%); */
+    position: absolute;
+    top: 0;
+    display: block;
+    margin: 0;
+}

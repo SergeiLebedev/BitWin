@@ -1,0 +1,17 @@
+<div id="{{'chart-container-'+ chartId}}" class="chart-container nonscroll">
+    <div class="blocker" *ngIf="loading">
+        <div class="spin-block">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+    </div>
+
+    <div class="chart mt-1" [ngStyle]="chart.options ? chart.options.cssStyle: getDefaultCSSStyle()">
+        <svg id="{{chartId}}" class="svg-chart">
+        </svg>
+
+        <div class="scrollable">
+            <svg id="{{legendId}}">
+            </svg>
+        </div>
+    </div>
+</div>

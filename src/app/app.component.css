@@ -1,0 +1,38 @@
+.main-content {
+    /* background-color: rgb(56, 11, 38); */
+    overflow: hidden;
+}
+
+.navigation {
+    padding: 1rem;
+    font-size: 3rem;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* background-color: rgb(56, 11, 38); */
+}
+
+.outlet {
+    margin-top: 5rem;
+}
+
+a {
+    color: blueviolet;
+}
+a:active {
+    color: #FF004C;
+}
+
+.spinner:hover {
+    animation: fa-spin 2s infinite linear;
+}
+
+
+
+
+
+
+    

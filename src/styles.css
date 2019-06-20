@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(56, 11, 38);
+}
+
+.scale-size {
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.scale-size:hover {
+    transform: scale(1.2,1.2);
+}
+
+.scale-size-tag {
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.scale-size-tag:hover {
+    /* transition: scale .5s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
+    font-size:  100px;
+}

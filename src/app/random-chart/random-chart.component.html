@@ -1,0 +1,42 @@
+<br>
+<label class="label">If you order web application first time we make one dynamic svg diagram for free.
+    <button type="button" class="good-looking-button button-height" title="Add new chart" (click)="onAddChart()">
+        <i class="fas fa-calendar-plus scale-size"></i>
+        Add new chart
+    </button>
+    &nbsp;
+    <button type="button" class="good-looking-button button-height" title="Add new pie-chart" (click)="onAddPieChart()">
+        <i class="fas fa-calendar-plus scale-size"></i>
+        Add new pie-chart
+    </button>    
+</label>
+
+
+<div class="chart-list">
+    <div *ngFor="let chart of charts; let i = index" class="chart-item">
+        <div>
+            <app-chart [chart]="chart" [loading]="chart.loading"></app-chart>
+
+            <button type="button" class="good-looking-button button-position" title="Close"
+                (click)="onCloseChart(chart)">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<div class="chart-list">
+    <div *ngFor="let pieChart of pieCharts; let i = index" class="chart-item">
+        <div>
+            <app-pie-chart></app-pie-chart>
+
+            <button type="button" class="good-looking-button button-position" title="Close"
+                (click)="onClosePieChart(i)">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+</div>
+

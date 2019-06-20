@@ -1,0 +1,32 @@
+.main-container {
+    padding: 1rem;
+}
+
+.price {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deliverance {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quality-assurance {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.satisfaction {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.description {
+    font-size: 2rem;
+    color: white;
+}
