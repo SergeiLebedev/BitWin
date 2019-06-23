@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'howitworks', component: HowItWorksComponent },
   { path: 'random-chart', component: RandomChartComponent },
   { path: 'game', component: CarRaceComponent },
-  { path: 'new-zealand', component: NewZealandComponent },
+  // { path: 'new-zealand', component: NewZealandComponent },
   { path: 'road-code', component: RoadCodeComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }

@@ -21,9 +21,9 @@
                 (click)="checkAnswer(i)">
                 {{answer}}
                 <span *ngIf="currentAnswer">
-                    <img src="/assets/tick.svg"
+                    <img src="./assets/driver_test/tick.svg"
                         *ngIf="currentAnswer === currentTest.questions[currentQuestion].answer && currentAnswer === i.toString() || currentTest.questions[currentQuestion].answer === i.toString()">
-                    <img src="/assets/cross.svg"
+                    <img src="./assets/driver_test/cross.svg"
                         *ngIf="currentAnswer !== currentTest.questions[currentQuestion].answer && currentAnswer === i.toString()">
                 </span>
             </div>

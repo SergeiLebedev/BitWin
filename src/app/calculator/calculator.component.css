@@ -38,7 +38,7 @@
 } */
 
 .calculator {
-    background-image: url(../../assets/calc.jpg);
+    /* background-image: url(../../assets/calc.jpg); */
     background-color: white; 
     height: -webkit-fill-available;
 }

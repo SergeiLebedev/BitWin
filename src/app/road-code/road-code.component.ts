@@ -14,7 +14,7 @@ export class RoadCodeComponent implements OnInit {
     currentAnswer: string;
     rightAnswers: number;
     wrongAnswers: number;
-    picturesPath = '/assets/driver_test/';
+    picturesPath = './assets/driver_test/';
     questionsNumber = 35;
 
     constructor() { }
