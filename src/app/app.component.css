@@ -1,6 +1,9 @@
 .main-content {
     /* background-color: rgb(56, 11, 38); */
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .navigation {
@@ -16,7 +19,7 @@
 }
 
 .outlet {
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
 }
 
 a {

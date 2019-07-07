@@ -215,11 +215,10 @@ export class Questions {
 }
 
 export class Test {
-    private static counter = 0;
     id = 0;
     questions = [];
-    constructor() {
-        this.id = Test.counter++;
+    constructor(id) {
+        this.id = id;
     }
 
     mixTest() {

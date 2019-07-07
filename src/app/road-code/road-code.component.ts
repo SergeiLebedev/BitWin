@@ -23,8 +23,10 @@ export class RoadCodeComponent implements OnInit {
         const questions = new Questions().questions;
         let questionsLeft = questions.length;
         let questionsForTest = this.questionsNumber;
+        let testNumber = -1;
         for (let index = 0; index < questions.length; index += this.questionsNumber) {
-            const test = new Test();
+            testNumber++;
+            const test = new Test(testNumber);
             questionsLeft -= this.questionsNumber;
             questionsForTest = Math.min(this.questionsNumber, questionsLeft);
             if (questionsForTest >= this.questionsNumber) {
@@ -54,7 +56,7 @@ export class RoadCodeComponent implements OnInit {
     }
 
     nextQuestion() {
-        this.currentQuestion = this.currentQuestion < this.questionsNumber ? this.currentQuestion + 1 : this.currentQuestion;
+        this.currentQuestion = this.currentQuestion < this.currentTest.questions.length ? this.currentQuestion + 1 : this.currentQuestion;
         this.currentAnswer = '';
     }
 
