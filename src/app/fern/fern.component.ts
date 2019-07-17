@@ -56,6 +56,12 @@ class SilverFernAnimation {
                 },
                 false
             );
+
+            this.canvas.addEventListener(
+                'touchmove',
+                (evt) => {
+                    self.oMousePos(evt);
+                }, false);
         }
 
         setTimeout(() => {
