@@ -60,7 +60,7 @@ class SilverFernAnimation {
             this.canvas.addEventListener(
                 'touchmove',
                 (evt) => {
-                    self.oMousePos(evt);
+                    self.oTouchPos(evt);
                 }, false);
         }
 
@@ -85,11 +85,19 @@ class SilverFernAnimation {
             || (this.previousMouseX - evt.clientX) > this.mouseSpeed
             || (this.previousMouseY - evt.clientY) > this.mouseSpeed) {
             if (this.ferns.length < 5) {
-                this.ferns.push(new Fern(evt.clientX, evt.clientY, this.previousMouseX, this.previousMouseY));
+                this.ferns.push(new Fern(evt.clientX, evt.clientY));
             }
         }
         this.previousMouseX = evt.clientX;
         this.previousMouseY = evt.clientY;
+    }
+
+    oTouchPos(evt) {
+        this.dots.push(new Dot(evt.clientX - 17, evt.clientY - 45));
+
+        if (this.ferns.length < 5) {
+            this.ferns.push(new Fern(evt.clientX, evt.clientY));
+        }
     }
 
     init() {
@@ -201,7 +209,7 @@ class Fern {
     size = MyRandom.getRandomNumber(20) / 10;
     lineWidth = this.size < 0.5 ? 1 : MyRandom.getRandomNumber(5);
 
-    constructor(x, y, x1, y1) {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
         // this.x1 = x1;
