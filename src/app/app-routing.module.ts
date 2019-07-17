@@ -8,6 +8,7 @@ import { RandomChartComponent } from './random-chart/random-chart.component';
 import { NewZealandComponent } from './new-zealand/new-zealand.component';
 import { CarRaceComponent } from './car-race/car-race.component';
 import { RoadCodeComponent } from './road-code/road-code.component';
+import { FernComponent } from './fern/fern.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,8 +17,9 @@ const routes: Routes = [
   { path: 'howitworks', component: HowItWorksComponent },
   { path: 'random-chart', component: RandomChartComponent },
   { path: 'game', component: CarRaceComponent },
-  // { path: 'new-zealand', component: NewZealandComponent },
+  { path: 'new-zealand', component: NewZealandComponent },
   { path: 'road-code', component: RoadCodeComponent },
+  { path: 'fern', component: FernComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];

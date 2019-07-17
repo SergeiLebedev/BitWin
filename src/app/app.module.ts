@@ -18,6 +18,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { NewZealandComponent } from './new-zealand/new-zealand.component';
 import { CarRaceComponent } from './car-race/car-race.component';
 import { RoadCodeComponent } from './road-code/road-code.component';
+import { FernComponent } from './fern/fern.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { RoadCodeComponent } from './road-code/road-code.component';
     NewZealandComponent,
     CarRaceComponent,
     RoadCodeComponent,
+    FernComponent,
   ],
   imports: [
     BrowserModule,

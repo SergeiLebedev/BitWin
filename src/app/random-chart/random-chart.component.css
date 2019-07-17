@@ -1,3 +1,7 @@
+.main-content {
+    padding-top: 4rem;
+}
+
 .chart-list {
     padding: 5px;
     overflow-y: auto;
@@ -19,22 +23,22 @@
     position: absolute;
     right: 10px;
     top: 10px;
+    
 }
 
 .good-looking-button {
     background: bisque;
     border: none;
     border-radius: 3px;
-    /* margin: 5px;
-    height: auto; */
+    cursor: pointer;
 }
 
 .button-height {
-    height: 2rem;
+    height: 2rem;    
 }
 
 .label {
     font-size: 2rem;
-    color: white;
+    color: crimson;
     margin: 1rem;
 }
