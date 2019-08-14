@@ -9,6 +9,7 @@ import { NewZealandComponent } from './new-zealand/new-zealand.component';
 import { CarRaceComponent } from './car-race/car-race.component';
 import { RoadCodeComponent } from './road-code/road-code.component';
 import { FernComponent } from './fern/fern.component';
+import { LeavesComponent } from './leaves/leaves.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'new-zealand', component: NewZealandComponent },
   { path: 'road-code', component: RoadCodeComponent },
   { path: 'fern', component: FernComponent },
+  { path: 'leaves', component: LeavesComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];

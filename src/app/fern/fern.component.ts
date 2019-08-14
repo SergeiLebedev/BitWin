@@ -378,13 +378,4 @@ class Fern {
     }
 }
 
-class Leaf {
 
-    constructor() {
-
-    }
-
-    draw(ctx) {
-
-    }
-}

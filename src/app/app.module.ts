@@ -19,6 +19,7 @@ import { NewZealandComponent } from './new-zealand/new-zealand.component';
 import { CarRaceComponent } from './car-race/car-race.component';
 import { RoadCodeComponent } from './road-code/road-code.component';
 import { FernComponent } from './fern/fern.component';
+import { LeavesComponent } from './leaves/leaves.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FernComponent } from './fern/fern.component';
     CarRaceComponent,
     RoadCodeComponent,
     FernComponent,
+    LeavesComponent,
   ],
   imports: [
     BrowserModule,
