@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MyRandom } from '../car-race/car-race.component';
 
 @Component({
     selector: 'app-leaves',
@@ -8,14 +7,6 @@ import { MyRandom } from '../car-race/car-race.component';
 })
 export class LeavesComponent implements OnInit, OnDestroy {
     leaf: LeafAnimation;
-    x1: number;
-    y1: number;
-    x2: number;
-    y2: number;
-    x3: number;
-    y3: number;
-    x4: number;
-    y4: number;
 
     constructor() { }
 
@@ -27,13 +18,6 @@ export class LeavesComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.leaf.destroy();
         this.leaf = null;
-    }
-    onChange(attr, value) {
-        this.leaf.change(this.x1, this.y1, this.x2, this.y2, this.x3, this.y3, this.x4, this.y4);
-    }
-
-    onKey(attr, value) {
-        this.leaf.change(this.x1, this.y1, this.x2, this.y2, this.x3, this.y3, this.x4, this.y4);
     }
 }
 
@@ -135,17 +119,6 @@ class LeafAnimation {
             this.leaves = this.leaves.filter(path => path.opacity > 0).map(path => path);
         }
     }
-
-    change(x1, y1, x2, y2, x3, y3, x4, y4) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
-        this.x3 = x3;
-        this.y3 = y3;
-        this.x4 = x4;
-        this.y4 = y4;
-    }
 }
 
 class Leaf {
@@ -186,9 +159,9 @@ class Leaf {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.color1 = 62; // MyRandom.getRandomNumber(255);
-        this.color2 = 216; // MyRandom.getRandomNumber(255);
-        this.color3 = 111; // MyRandom.getRandomNumber(255);
+        this.color1 = 62;
+        this.color2 = 216;
+        this.color3 = 111;
         this.originalX = x;
         this.deviation = 20 + MyRandom.getRandomNumber(40);
         this.xSpeed = MyRandom.getRandomNumber(2);
@@ -207,7 +180,7 @@ class Leaf {
 
         this.initDots();
 
-        if (MyRandom.getRandomNumber(10) > 5) {
+        if (MyRandom.getRandomBoolean()) {
             this.changeAngle = MyRandom.getRandomNumber(10);
         } else {
             this.changeAngle = - MyRandom.getRandomNumber(10);
@@ -218,14 +191,9 @@ class Leaf {
     }
 
     draw(ctx, x1, y1, x2, y2, x3, y3, x4, y4) {
-        // leaf
         ctx.fillStyle = `rgb(${this.color1},${this.color2},${this.color3},${this.opacity})`;
         ctx.beginPath();
         ctx.moveTo(this.dots[0].x, this.dots[0].y);
-        // ctx.bezierCurveTo(this.x + 2, this.y - 16, this.x + 25, this.y - 16, this.x + 30, this.y - 30);
-        // ctx.bezierCurveTo(this.x - 2, this.y + 16, this.x - 25, this.y + 16, this.x, this.y);
-        // ctx.bezierCurveTo(this.x + x1, this.y + y1, this.x + x2, this.y + y2, this.x + 30, this.y - 30);
-        // ctx.bezierCurveTo(this.x + x3, this.y + y3, this.x + x4, this.y + y4, this.x, this.y);
         ctx.bezierCurveTo(this.dots[1].x, this.dots[1].y, this.dots[2].x, this.dots[2].y, this.dots[3].x, this.dots[3].y);
         ctx.bezierCurveTo(this.dots[4].x, this.dots[4].y, this.dots[5].x, this.dots[5].y, this.dots[0].x, this.dots[0].y);
         ctx.fill();
@@ -286,5 +254,15 @@ class Leaf {
             dot.x = angleX * Math.cos(turnAngle) - angleY * Math.sin(turnAngle) + zeroX;
             dot.y = angleX * Math.sin(turnAngle) + angleY * Math.cos(turnAngle) + zeroY;
         });
+    }
+}
+
+export class MyRandom {
+    static getRandomNumber(limit: number = 1) {
+        return Math.ceil(Math.random() * limit);
+    }
+
+    static getRandomBoolean() {
+        return Math.random() < 0.5;
     }
 }
