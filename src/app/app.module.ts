@@ -20,6 +20,7 @@ import { CarRaceComponent } from './car-race/car-race.component';
 import { RoadCodeComponent } from './road-code/road-code.component';
 import { FernComponent } from './fern/fern.component';
 import { LeavesComponent } from './leaves/leaves.component';
+import { MathComponent } from './math/math.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { LeavesComponent } from './leaves/leaves.component';
     RoadCodeComponent,
     FernComponent,
     LeavesComponent,
+    MathComponent,
   ],
   imports: [
     BrowserModule,
