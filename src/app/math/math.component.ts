@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Star } from '../contacts/contacts.component';
 import { MathSettings } from '../math-settings';
 import { Rocket } from './rocket';
-import { Task } from './task';
+import { Coordinates, Task } from './task';
 
 @Component({
   selector: 'app-math',
@@ -54,18 +54,18 @@ export class MathComponent implements OnInit {
             this.requestId = null;
             this.rocket = new Rocket(this.ctx, this.cw, this.ch);
             this.mathSettings = new MathSettings();
-            this.task = new Task(this.mathSettings, this.ctx, this.cw, this.ch)
+            this.task = new Task(this.mathSettings, this.ctx, this.cw, this.ch);
 
             this.ctx.globalAlpha = 0.5;
 
 
-            // this.canvas.addEventListener(
-            //     'mousedown',
-            //     (evt) => {
-            //         this.dragging = true;
-            //     },
-            //     false
-            // );
+            this.canvas.addEventListener(
+                'mousedown',
+                (evt) => {
+                    this._checkAnswer(evt);
+                },
+                false
+            );
 
             this.canvas.addEventListener(
                 'mousemove',
@@ -112,7 +112,7 @@ export class MathComponent implements OnInit {
       }
   }
 
-  draw() {
+  public draw() {
       this.requestId = window.requestAnimationFrame(() => this.draw());
       this.ctx.clearRect(0, 0, this.cw, this.ch);
       // this.txt();
@@ -140,7 +140,7 @@ export class MathComponent implements OnInit {
       this.task.draw();
   }
 
-  txt() {
+  private txt() {
       const t = 'Click & drag'.split('').join(' ');
       this.ctx.font = '1.5em Lucida Console';
       this.ctx.fillStyle = 'hsla(210,95%,45%,.75)';
@@ -149,7 +149,7 @@ export class MathComponent implements OnInit {
   }
 
 
-  init() {
+  private init() {
       if (this.requestId) {
           window.cancelAnimationFrame(this.requestId);
           this.requestId = null;
@@ -166,14 +166,18 @@ export class MathComponent implements OnInit {
       this.draw();
   }
 
-  oMousePos(canvas, evt) {
+  private oMousePos(canvas, evt) {
       const clientRect = canvas.getBoundingClientRect();
-      return {
-          // objeto
-          x: Math.round(evt.clientX - clientRect.left),
-          y: Math.round(evt.clientY - clientRect.top)
-      };
+      return new Coordinates(Math.round(evt.clientX - clientRect.left), Math.round(evt.clientY - clientRect.top))
+      // {
+      //     // object
+      //     x: Math.round(evt.clientX - clientRect.left),
+      //     y: Math.round(evt.clientY - clientRect.top)
+      // };
   }
 
-
+  private _checkAnswer(evt): void {
+    const coordinates = this.oMousePos(this.canvas, evt);
+    this.task.checkAnswers(coordinates);
+  }
 }

@@ -14,7 +14,9 @@ export class Rocket {
   public draw(): void {
     const image = new Image();
     image.src = this._imagePath;
-    this._ctx.drawImage(image, this._cw/2, this._ch - this._ch / 10, image.width * (this._ch / 10) / image.height , this._ch / 10);
+    const rocketHeight = this._ch / 10;
+    const rocketWidth = image.width * rocketHeight / image.height;
+    this._ctx.drawImage(image, this._cw/2 - rocketWidth / 2, this._ch - rocketHeight, rocketWidth , rocketHeight);
   }
 
   public drawSVG(): void {

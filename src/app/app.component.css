@@ -7,13 +7,14 @@
 }
 
 .navigation {
-    padding: 1rem;
+    /* padding: 1rem; */
+    padding-top: 1rem;
     font-size: 3rem;
     position: fixed;
     z-index: 3;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     flex-direction: row;
     /* background-color: rgb(56, 11, 38); */
 }
@@ -38,4 +39,3 @@ a:active {
 
 
 
-    
